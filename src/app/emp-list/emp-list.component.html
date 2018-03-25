@@ -1,0 +1,37 @@
+<h3>
+  List of Employees
+</h3>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Id</th>
+    <th>Emp No</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>City</th>
+  </tr>
+
+  <tr *ngFor="let emp of listOfEmployees">
+    <td>{{ emp.id }} </td>
+    <td>{{ emp.empNo }} </td>
+    <td>{{ emp.firstName }} </td>
+    <td>{{ emp.lastName }} </td>
+    <td>{{ emp.city }} </td>
+    <td>
+      <input type="submit" value="Show Details"
+        class="btn btn-info" (click)="showDetails(emp)"/>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-6">
+  <app-emp-details [employee]="selectedEmployee"></app-emp-details>
+</div>
+
+<div class="col-sm-6">
+  <app-emp-create (empCreated)="handleEmpCreation($event)"></app-emp-create>
+</div>
+</div>
