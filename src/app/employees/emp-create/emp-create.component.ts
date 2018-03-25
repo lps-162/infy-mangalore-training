@@ -17,5 +17,6 @@ export class EmpCreateComponent implements OnInit {
 
   createEmployee() {
     this.empCreated.emit(this.employee);
+    this.employee = new Employee();
   }
 }

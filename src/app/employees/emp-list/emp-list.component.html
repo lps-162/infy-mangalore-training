@@ -1,7 +1,9 @@
 <h3>
   List of Employees
 </h3>
-
+<a [routerLink]="['/employees/create']" class="btn btn-success">
+    Create New
+</a>
 <table class="table table-bordered">
   <tr>
     <th>Id</th>
@@ -17,16 +19,21 @@
     <td>{{ emp.firstName }} </td>
     <td>{{ emp.lastName }} </td>
     <td>{{ emp.city }} </td>
-    <td>
+    <!--<td>
       <input type="submit" value="Show Details"
         class="btn btn-info" (click)="showDetails(emp)"/>
+    </td>-->
+    <td>
+      <a [routerLink]="['/employees', emp.id]">
+        Show Detail
+      </a>
     </td>
   </tr>
 </table>
 
 <br>
 
-<div class="row">
+<!--<div class="row">
   <div class="col-sm-6">
   <app-emp-details [employee]="selectedEmployee"></app-emp-details>
 </div>
@@ -34,4 +41,4 @@
 <div class="col-sm-6">
   <app-emp-create (empCreated)="handleEmpCreation($event)"></app-emp-create>
 </div>
-</div>
+</div>-->
